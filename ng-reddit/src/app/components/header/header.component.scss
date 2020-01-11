@@ -1,0 +1,46 @@
+header {
+
+  $top-border: 1px solid lighten($color: #ccc, $amount: 5%);
+
+  display: grid;
+  grid-template-columns: 5% 14% 71%;
+  height: auto;
+  border: $top-border;
+  margin-top: 10px;
+
+  .app-name {
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: auto 10px;
+  }
+
+  .logo {
+    display: flex;
+    border-right: $top-border;
+    border-left: $top-border;
+    padding: 5px 0;
+    justify-content: center;
+
+    img {
+      height: 100px;
+    }
+
+    span {
+      margin: auto 0;
+      padding-right: 10px;
+      color: black;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-weight: 600;
+    }
+
+  }
+
+}
+
+@media(max-width: 825px) {
+  header {
+    grid-template-columns: 0% 30% 70%;
+  }
+}
