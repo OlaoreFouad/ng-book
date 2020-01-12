@@ -3,6 +3,7 @@
   display: grid;
   grid-template-columns: 25% 75%;
   gap: 20px;
+  margin-bottom: 10px;
 
   .content {
     display: flex;
@@ -31,6 +32,7 @@
 
         &:hover {
           color: lighten($color: blue, $amount: 10%);
+          cursor: pointer;
         }
 
       }

@@ -1,13 +1,13 @@
 <div class="article">
   <div class="points">
-    <span class="point">3</span> POINTS
+    <span class="point">{{ article.votes }}</span> POINTS
   </div>
   <div class="content">
-    <span class="title">Angular 2</span>
-    <span class="link">(angular.io)</span>
+    <span class="title" [textContent]="article.title"></span>
+    <span class="link">({{ article.domain() }})</span>
     <div class="votes">
-      <a href="#"> <i class="fa fa-arrow-up"></i> upvote</a>
-      <a href="#"> <i class="fa fa-arrow-down"></i> downvote </a>
+      <a (click)="article.voteUp()"> <i class="fa fa-arrow-up"></i> upvote</a>
+      <a (click)="article.voteDown()"> <i class="fa fa-arrow-down"></i> downvote </a>
     </div>
   </div>
 </div>
