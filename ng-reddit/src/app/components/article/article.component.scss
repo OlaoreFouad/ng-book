@@ -1,0 +1,58 @@
+.article {
+
+  display: grid;
+  grid-template-columns: 25% 75%;
+  gap: 20px;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      color: black;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .link {
+      color: grey;
+    }
+
+    .votes {
+      margin-top: auto;
+      margin-bottom: 4px;
+
+      a {
+        color: lighten($color: blue, $amount: 20%);
+        font-weight: 700;
+        font-size: .9rem;
+        margin: 2px 10px;
+        text-decoration: none;
+
+        &:hover {
+          color: lighten($color: blue, $amount: 10%);
+        }
+
+      }
+
+    }
+
+  }
+
+  .points {
+    background-color: lighten(#ccc, 7%);
+    text-align: center;
+    color: black;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    padding: 9px 0;
+
+    .point {
+      font-size: 2.4rem;
+      font-weight: 700;
+      display: block;
+    }
+
+  }
+
+}
