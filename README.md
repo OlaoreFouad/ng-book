@@ -6,3 +6,6 @@ This book contains a series of chapters that carefully discuss the concepts of t
 
 1. **Writing Your First Angular App.** <br>
     In this chapter, I built my first angular app in the book. An app that was perceived to be a reddit clone. Using basic components, models, binding and some very basic concepts were explained. The source code for this repo can be found <a href="https://github.com/OlaoreFouad/ng-book/tree/master/ng-reddit">here</a>. At the end of the chapter, I deployed the website to ZEIT now - on this <a href="https://ng-reddit.now.sh">url</a>.
+
+2. **TypeScript**<br>
+    Well, this wasn't really centered around Angular in any way. It only served as an introduction to TypeScript - a superset of the JavaScript language. ES6 provides a handful of features that makes web development easy and approachable - classes and modules. TypeScript ensures the use of types in code. While this may not feel needed, but it greatly improves the readability of code in many ways - as developers can clearly visualize the type and nature of data being passed in (function arguments) and data being returned. Apart from that, it also provides annotations. We also looked at the REPL program for TS - TSUN (TypeScript Upgraded Node).
