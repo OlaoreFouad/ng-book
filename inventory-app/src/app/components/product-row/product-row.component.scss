@@ -1,0 +1,56 @@
+.product {
+
+  display: grid;
+  grid-template-columns: 25% 55% 20%;
+  gap: 20px;
+  padding: 5px;
+  margin: 10px 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &-image {
+    width: 100%;
+
+    @media(max-width: 900px) {
+      height: 100%;
+    }
+  }
+
+  main {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    * {
+      padding: 7.5px 0;
+    }
+
+    .product-name {
+      color: black;
+      font-weight: 700;
+      font-size: 1.3rem;
+      display: block;
+    }
+
+    .product-sku {
+      color: gray;
+      font-size: .9rem;
+      font-weight: lighter;
+    }
+
+    .product-department {
+      color: lightblue;
+    }
+
+  }
+
+  &-price {
+    color: gray;
+    font-weight: 700;
+    padding-top: 20px;
+  }
+
+}

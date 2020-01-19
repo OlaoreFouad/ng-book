@@ -1,0 +1,11 @@
+<div class="product">
+  <img [src]="product.imageUrl" alt="business clothes" class="product-image">
+  <main>
+    <span class="product-name" [textContent]="product.name"></span>
+    <span class="product-sku">SKU {{ product.sku }}</span>
+    <div class="product-department">
+      <span *ngFor="let dept of product.department; let i = index">{{ dept }} {{ i == product.department.length-1 ? '' : '>' }} </span>
+    </div>
+  </main>
+  <div class="product-price">${{ product.price }}</div>
+</div>
