@@ -1,0 +1,34 @@
+section#app {
+
+  padding: 20px 10%;
+  @media(max-width: 900px) {
+    padding: 20px 2%;
+  }
+
+  .directive {
+
+    padding: 10px 0;
+
+    span { display: block; }
+
+    .heading {
+      color: black;
+      font-weight: 700;
+      font-size: 1.6rem;
+    }
+
+    .description {
+      color: black;
+      font-weight: lighter;
+      font-size: .9rem;
+      font-style: italic;
+    }
+
+    .content {
+      line-height: 1.6;
+      margin: 10px 0;
+    }
+
+  }
+
+}

@@ -1,0 +1,68 @@
+<app-header></app-header>
+
+<section id="app">
+  <div class="directive">
+    <span class="heading">ngIf</span>
+    <span class="description">
+      This directive, based on a condition, decides whether or not this view stays in the DOM. It renders the view if the condition is true.
+    </span>
+    <div class="content">
+      <input type="checkbox" (change)="showIsChecked = !showIsChecked"> {{ showIsChecked ? "Hide" : "Show" }} <br>
+      <span class="show-text" *ngIf="showIsChecked" >This visibility of this text is a reflection of the state of the checkbox above it.</span>
+    </div>
+  </div>
+  <hr>
+  <div class="directive">
+    <span class="heading">ngSwitch</span>
+    <span class="description">
+      This directive works like the common switch-case construct present in some programming languages. Where a variable is matched against different values (cases), and when a match is found, it performs a corresponding operation. It is a neater alternative to multiple ngIf expressions. It also provides a convenient medium to display specific elements if no matches are found.
+    </span>
+    <div class="content">
+      <input type="number" #switchInput [value]="switchNumber">
+      <button style="margin-left: 10px;" (click)="switchNumber = switchInput.value">Switch</button>
+      <div class="switch" [ngSwitch]="switchNumber">
+        <span *ngSwitchCase="1">You like the number one</span>
+        <span *ngSwitchCase="2">Two is an option</span>
+        <span *ngSwitchCase="3">Middle man!!!</span>
+        <span *ngSwitchCase="4">You do know you're one away from the bottom</span>
+        <span *ngSwitchCase="5">You have hit rock bottom</span>
+        <span *ngSwitchDefault>Has to be between 1 and 5</span>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="directive">
+    <span class="heading">ngStyle</span>
+    <span class="description">
+      This directive allows us to set the CSS properties of DOM elements using angular expressions. Use the input fields below to change the color and font size of the text, press the button to effect the changes.
+    </span>
+    <div class="content">
+      <input type="text" #textColor placeholder="Text Color" [value]="selectedColor">
+      <input type="number" #fontSize placeholder="Font Size" [value]="selectedFontSize" style="margin-left: 10px;">
+      <button style="margin-left: 10px;"
+      (click)="selectedColor = textColor.value; selectedFontSize = fontSize.value">Set Style</button>
+      <span class="result" [ngStyle]="{ color: selectedColor, 'font-size': selectedFontSize+'px' }">
+        This is the text to showcase...
+      </span>
+    </div>
+  </div>
+  <hr>
+  <div class="directive">
+    <span class="heading">ngFor</span>
+    <span class="description">
+      This directive is used to iterate through a list of items, while replicating a template most of the time. An <i>ngFor</i> is mostly used to list a group of items, like a list of shopping items, a category of an inventory or anything else. Check out this <a href="https://inventory-app-blond-two.now.sh/">app</a> I built to see how I used the ngFor with cross-component communication.
+    </span>
+  </div>
+  <hr>
+  <div class="directive" ngNonBindable>
+    <span class="heading">ngNonBindable</span>
+    <span class="description" >
+      Ever wanted to include something in the view, something Angular would surely interpret to mean something else. That process is called <b>binding</b>, as angular tries to resolve the expressions matching a particular pattern in the view with template variables or basic expressions. Sometimes, we do not want angular to interpret it that way, as we might want to leave it in its plain form - without modification. An example is <b>String Interpolation</b> with the double curly braces - <i>{{ }}</i>, when angular sees thatm it tries to interpret it, but by adding the <b>ngNonBindable</b> direcive to the container of the text or expression, it overlooks it - as it is done below...
+    </span>
+    <div class="content">
+      <span class="text">
+        {{ I am free to add anything here... }}
+      </span>
+    </div>
+  </div>
+</section>
