@@ -1,0 +1,50 @@
+section.app {
+  padding: 20px 30px;
+
+  h1 { font-size: 1.4rem; }
+
+  .form-group {
+    padding: 15px 0;
+
+    & > * {
+      display: block;
+    }
+
+    label {
+      margin: 10px 0;
+      color: black;
+      font-weight: 650;
+      font-size: .8rem;
+    }
+
+    button {
+      color: gray;
+      background-color: #e1e1e1;
+      padding: 10px 25px;
+      border-radius: 4px;
+      box-shadow: .1rem .1rem .2rem rgba(0, 0, 0, .2);
+      margin: 10px 0;
+      font-weight: 600;
+      outline: none;
+      border: none;
+    }
+
+    input {
+      padding: 8px;
+      width: 100%;
+      color: black;
+      outline: none;
+      border: 1px solid lightgray;
+      border-radius: 4px;
+      caret-color: black;
+      font-weight: 700;
+
+      &:placeholder-shown {
+        color: lightgray;
+      }
+
+    }
+
+  }
+
+}
