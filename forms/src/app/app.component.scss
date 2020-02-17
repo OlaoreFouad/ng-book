@@ -3,6 +3,30 @@ section.app {
 
   h1 { font-size: 1.4rem; }
 
+  .success {
+    color: green;
+    background-color: lighten($color: green, $amount: 20%);
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid green;
+    border-radius: 5px;
+    margin: 5px 0;
+  }
+
+  .errors {
+
+    .error {
+      color: red;
+      background-color: lighten($color: pink, $amount: 7%);
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid red;
+      border-radius: 5px;
+      margin: 5px 0;
+    }
+
+  }
+
   .form-group {
     padding: 15px 0;
 
@@ -18,8 +42,8 @@ section.app {
     }
 
     button {
-      color: gray;
-      background-color: #e1e1e1;
+      color: white;
+      background-color: green;
       padding: 10px 25px;
       border-radius: 4px;
       box-shadow: .1rem .1rem .2rem rgba(0, 0, 0, .2);
@@ -27,6 +51,16 @@ section.app {
       font-weight: 600;
       outline: none;
       border: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &[disabled] {
+        background-color: #e1e1e1;
+        &:hover { cursor: not-allowed; }
+      }
+
     }
 
     input {

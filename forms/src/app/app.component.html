@@ -1,8 +1,20 @@
 <section class="app">
   <h1>Demo Form: SKU</h1>
-  <div class="form-group">
+  <form class="form-group" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <span class="help-text"><i style="color: red">value of form must begin with <b>money</b></i></span>
     <label for="sku">SKU</label>
-    <input type="text" placeholder="SKU">
-    <button type="button">Submit</button>
+    <input type="text" placeholder="SKU" [formControl]="sku">
+    <button type="submit" [disabled]="!myForm.valid">Submit</button>
+  </form>
+  <div class="errors" >
+    <div class="error" *ngIf="sku.hasError('required')" ><p>SKU is required!</p></div>
+    <div class="error" *ngIf="sku.hasError('minlength')" ><p>SKU should be at least 3 characters minimun</p></div>
+    <div class="error" *ngIf="sku.hasError('beginsWithMoney')" ><p>SKU should also begin with the text 'money'</p></div>
   </div>
+  <div class="success" *ngIf="sku.valid" ><p>SKU is finally valid!</p></div>
+
+  <p style="margin-top: 20px; font-size: 1.2rem;">
+    <i>{{ myForm.value | json }}</i>
+  </p>
+  <p *ngIf="formSubmitted && myForm.valid" style="margin-top: 20px; font-size: 1rem;">Form Submitted!</p>
 </section>
