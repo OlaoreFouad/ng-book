@@ -1,0 +1,25 @@
+.auth {
+
+  h3 {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  button.signin {
+    color: gray;
+    padding: 10px 30px;
+    outline: none;
+    border: none;
+    font-family: 700;
+    font-size: 1rem;
+    border-radius: 4px;
+    background-color: lightgray;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+  }
+
+}
