@@ -1,3 +1,5 @@
+import { AnalyticsImplementationModule } from './modules/analytics-implementation.module';
+import { AnalyticsService } from './services/analytics.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -10,9 +12,13 @@ import { UserDemoInjectorComponent } from './user-demo-injector/user-demo-inject
     UserDemoInjectorComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AnalyticsImplementationModule
   ],
-  providers: [],
+  providers: [
+    { provide: 'API_URL', useValue: 'http://my-api.com/v1' }
+    // { provide: AnalyticsService, useClass: AnalyticsService }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

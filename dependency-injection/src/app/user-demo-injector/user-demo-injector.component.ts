@@ -1,5 +1,6 @@
+import { AnalyticsService } from './../services/analytics.service';
 import { UserService } from './../user.service';
-import { Component, OnInit, ReflectiveInjector, Injector } from '@angular/core';
+import { Component, OnInit, ReflectiveInjector, Injector, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-user-demo-injector',
@@ -11,7 +12,8 @@ export class UserDemoInjectorComponent implements OnInit {
   userService: UserService;
   name: string;
 
-  constructor() {
+  constructor(@Inject('API_URL') private apiUrl: string,
+              private analytics: AnalyticsService) {
     const injector = ReflectiveInjector.resolveAndCreate([UserService]);
 
     this.userService = injector.get(UserService);
@@ -22,9 +24,14 @@ export class UserDemoInjectorComponent implements OnInit {
       name: 'Olaore Fouad'
     });
     this.name = this.userService.get().name;
+    this.analytics.record({
+      eventName: 'loggedIn',
+      source: this.name
+    });
   }
 
   ngOnInit() {
+    console.log(this.apiUrl);
   }
 
 }
