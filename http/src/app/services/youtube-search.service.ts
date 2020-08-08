@@ -25,9 +25,18 @@ export class YoutubeSearchService {
     ].join('&');
 
     return this.http.get(this.apiUrl + `?${ params }`).pipe(
+      map((response: any) => {
+        return response.items;
+      }),
       map(items => {
-        console.log(items);
-        return null;
+        return items.map(item => {
+          return new SearchResult({
+            id: item.id.videoId,
+            description: item.snippet.description,
+            thumbnailUrl: item.snippet.thumbnails.high,
+            title: item.snippet.title
+          });
+        });
       })
     );
 

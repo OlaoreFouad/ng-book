@@ -1,3 +1,4 @@
+import { SearchResult } from './models/search-result.model';
 import { YoutubeSearchService } from './services/youtube-search.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -14,8 +15,8 @@ export class AppComponent implements OnInit {
   ) {  }
 
   ngOnInit() {
-    this.youtubeSearch.search('adora').subscribe(_ => {
-      console.log('hey!');
+    this.youtubeSearch.search('adora').subscribe((data: SearchResult[]) => {
+      console.log(data.length);
     });
   }
 
