@@ -3,7 +3,7 @@ export class SearchResult {
     id: string;
     title: string;
     description: string;
-    thumbnailUrl: string;
+    thumbnailUrl: IThumbnail;
     videoUrl: string;
 
     constructor(obj?: any) {
@@ -14,4 +14,10 @@ export class SearchResult {
       this.videoUrl = obj && obj.videoUrl || `https://youtube.com/watch?v=${ this.id }`;
     }
 
+}
+
+export interface IThumbnail {
+  height: number;
+  width: number;
+  url: string;
 }

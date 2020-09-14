@@ -1,0 +1,11 @@
+<div class="search-result">
+  <img
+    class="thumbnail"
+    [src]="result.thumbnailUrl.url"
+    [height]="result.thumbnailUrl.height"
+    [alt]="result.title"
+  >
+  <h2 class="title">{{ result.title }}</h2>
+  <p class="desc">{{ result.description }}</p>
+  <a class="btn btn-warning" [href]="result.videoUrl" target="_blank" >Watch</a>
+</div>

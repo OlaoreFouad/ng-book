@@ -1,0 +1,11 @@
+<div class="container mt-2">
+  <app-search-box
+    (loading)="loading = $event"
+    (results)="updateResults($event)"
+  ></app-search-box>
+
+  <img src="../assets/Spinner-1s-200px.gif" alt="spinner" width="50" height="50" *ngIf="loading"  >
+
+  <app-search-result *ngFor="let result of results" [result]="result"  ></app-search-result>
+
+</div>

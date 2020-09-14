@@ -10,14 +10,19 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'http';
 
+  loading = false;
+  results: SearchResult[] = [];
+
   constructor(
     private youtubeSearch: YoutubeSearchService
   ) {  }
 
+  updateResults(results: SearchResult[]) {
+    this.results = results;
+    console.log(this.results);
+  }
+
   ngOnInit() {
-    this.youtubeSearch.search('adora').subscribe((data: SearchResult[]) => {
-      console.log(data.length);
-    });
   }
 
 }
